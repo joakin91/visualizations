@@ -1,5 +1,7 @@
 # visualizations
 
+This project is intended to be used as a playground for visualizations.
+
 ## Project setup
 ```
 npm install
