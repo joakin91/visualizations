@@ -2,20 +2,24 @@
   <div id="container">
     <vgl-renderer antialias style="height: 100vh;">
         <vgl-scene>
-        <vgl-sphere-geometry name="sphere" radius=25></vgl-sphere-geometry>
-        <vgl-mesh-standard-material name="std"></vgl-mesh-standard-material>
-        <vgl-mesh geometry="sphere" material="std" :position="`${x} ${y} ${z}`"></vgl-mesh>
-        <vgl-axes-helper size=140></vgl-axes-helper>
-        <vgl-ambient-light color="#ffeecc"></vgl-ambient-light>
-        <vgl-directional-light position="0 1 1"></vgl-directional-light>
+        <vgl-geometry name="vertices" position-attribute="-5, 0, 0, 10, 10, 0"></vgl-geometry>
+        <vgl-line-basic-material name="line" :linewidth="linewidth" :color="`#${[r, g, b].map(v => parseInt(v).toString(16)).map(v => v.length < 2 ? '0' + v : v).join('')}`"></vgl-line-basic-material>
+        <vgl-line-loop geometry="vertices" material="line"></vgl-line-loop>
         </vgl-scene>
-        <vgl-perspective-camera orbit-position="200 1 0.5"></vgl-perspective-camera>
+        <vgl-perspective-camera orbit-position="20 0.8 0.7"></vgl-perspective-camera>
     </vgl-renderer>
+
     <aside class="control-panel">
-        <h3>Position</h3>
-        <label>x<input type="range" v-model="x"></label>
-        <label>y<input type="range" v-model="y"></label>
-        <label>z<input type="range" v-model="z"></label>
+        <section>
+        <h3>Color</h3>
+        <label>R<input type="range" max="255" v-model="r"></label>
+        <label>G<input type="range" max="255" v-model="g"></label>
+        <label>B<input type="range" max="255" v-model="b"></label>
+        </section>
+        <section>
+        <h3>Line</h3>
+        <label>Width<input type="range" max="100" step="0.1" v-model="linewidth"></label>
+        </section>
     </aside>
   </div>
 </template>
@@ -33,9 +37,10 @@ export default {
     mounted: () => {},
     data: () => {
         return {
-            x: 50,
-            y: 50,
-            z: 50,
+            r: 255,
+            g: 255,
+            b: 255,
+            linewidth: 60,
         }
     },
 }

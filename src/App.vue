@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <!--img alt="Vue logo" src="./assets/logo.png"-->
-    <!--HelloWorld msg="Welcome to Your Vue.js App"/-->
-    <Visualization1></Visualization1>
+    <router-view />
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
-import Visualization1 from './components/Visualization1.vue'
+
 
 export default {
-  name: 'app',
-  components: {
-    Visualization1
-  }
+  name: 'app'
 }
 </script>
 
 <style>
 body{
-  margin: 0
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  max-width: 100%;
+  margin: auto;
 }
 </style>
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
