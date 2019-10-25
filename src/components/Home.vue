@@ -23,11 +23,27 @@
                     </md-card-header>
 
                     <md-card-content>
-                    line experiment
+                    line movement experiment
                     </md-card-content>
 
                     <md-card-actions>
                     <router-link to="/visualization2"><md-button>Launch</md-button></router-link>
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </div>
+        <div class="md-layout md-gutter center">
+            <div class="md-layout-item">
+                <md-card>
+                    <md-card-header>
+                    </md-card-header>
+
+                    <md-card-content>
+                    line creation experiment
+                    </md-card-content>
+
+                    <md-card-actions>
+                    <router-link to="/visualization3"><md-button>Launch</md-button></router-link>
                     </md-card-actions>
                 </md-card>
             </div>
