@@ -5,8 +5,8 @@
         <vgl-axes-helper size=140></vgl-axes-helper>
         <!--position-attribute: The x, y, and z coordinates of each vertex in this geometry. Goes in triplets-->
         <template v-for="line in lines">
-            <vgl-geometry :name="`${line.name}`" :position-attribute="`${line.vertices}`" v-bind:key="line.name"></vgl-geometry>
-            <vgl-line-loop :geometry="`${line.name}`" material="line" v-bind:key="line.name"></vgl-line-loop>
+            <vgl-geometry :name="`${line.name}`" :position-attribute="`${line.vertices}`" v-bind:key="line.name+'-geometry'"></vgl-geometry>
+            <vgl-line-loop :geometry="`${line.name}`" material="line" v-bind:key="line.name+'-line'"></vgl-line-loop>
         </template>
         <vgl-line-basic-material name="line" :linewidth="linewidth" :color="`#${[r, g, b].map(v => parseInt(v).toString(16)).map(v => v.length < 2 ? '0' + v : v).join('')}`"></vgl-line-basic-material>
         </vgl-scene>
